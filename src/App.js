@@ -1,26 +1,27 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { StoreProvider, createStore } from 'easy-peasy';
 
-function App() {
+import model from './model';
+
+const store = createStore(model);
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+    <StoreProvider store={store}>
+      <div className='container'>
+        <div
+          className='row align-items-center justify-content-center'
+          style={{ height: '100vh' }}
         >
-          Learn React
-        </a>
-      </header>
-    </div>
+          <i
+            className='fab fa-react mr-2 text-primary'
+            style={{ fontSize: '2rem' }}
+          />
+          <h5 className='text-primary pt-1'>React with Easy Peasy Bundle</h5>
+        </div>
+      </div>
+    </StoreProvider>
   );
-}
+};
 
 export default App;
