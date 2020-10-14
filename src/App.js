@@ -8,17 +8,15 @@ const store = createStore(model);
 const App = () => {
   return (
     <StoreProvider store={store}>
-      <div className='container'>
-        <div
-          className='row align-items-center justify-content-center'
-          style={{ height: '100vh' }}
-        >
-          <i
-            className='fab fa-react mr-2 text-primary'
-            style={{ fontSize: '2rem' }}
-          />
-          <h5 className='text-primary pt-1'>React with Easy Peasy Bundle</h5>
-        </div>
+      <div
+        style={{
+          height: '100vh',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+        }}
+      >
+        <h2>React with Easy Peasy Bundle</h2>
       </div>
     </StoreProvider>
   );
